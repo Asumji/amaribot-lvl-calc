@@ -2,11 +2,6 @@ import os
 
 clear = lambda: os.system('cls')
 
-slvl = input("Start Level: ")
-elvl = input("Level Goal: ")
-pmulti = input("Point Multiplier: ")
-cd = input("Cooldown: ")
-
 def floatToInt(float):
     string = str(float)
     string = string.split(".")
@@ -41,28 +36,35 @@ def convertTime(ms):
         time = "Seconds: " + str(second)
 
     return time
-    
 
+while (True):
 
-if (slvl.isnumeric() and elvl.isnumeric() and pmulti.isnumeric() and cd.isnumeric()):
-    slvl = int(slvl)
-    elvl = int(elvl)
-    pmulti = int(pmulti)
-    cd = int(cd)
+    slvl = input("Start Level: ")
+    elvl = input("Level Goal: ")
+    pmulti = input("Point Multiplier: ")
+    cd = input("Cooldown: ")
 
-    if (slvl > 0):
-        slvlxp = 20 * ((slvl-1) ** 2) + 35
+    if (slvl.isnumeric() and elvl.isnumeric() and pmulti.isnumeric() and cd.isnumeric()):
+        slvl = int(slvl)
+        elvl = int(elvl)
+        pmulti = int(pmulti)
+        cd = int(cd)
+
+        if (slvl > 0):
+            slvlxp = 20 * ((slvl-1) ** 2) + 35
+        else:
+            slvlxp = 0
+
+        elvlxpfrom0 = 20 * ((elvl-1) ** 2) + 35
+
+        xp = str(elvlxpfrom0 - slvlxp)
+
+        nMessages = int(xp) / pmulti
+        nMessages = floatToInt(nMessages)
+        milliseconds = (nMessages * cd) * 1000
+        time = convertTime(milliseconds)
+        
+        clear()
+        print("Needed XP: " + xp + "\nNeeded Messages: " + str(nMessages) + "\n" + time)
     else:
-        slvlxp = 0
-
-    elvlxpfrom0 = 20 * ((elvl-1) ** 2) + 35
-
-    xp = str(elvlxpfrom0 - slvlxp)
-
-    nMessages = int(xp) / pmulti
-    nMessages = floatToInt(nMessages)
-    milliseconds = (nMessages * cd) * 1000
-    time = convertTime(milliseconds)
-    
-    clear()
-    print("Needed XP: " + xp + "\nNeeded Messages: " + str(nMessages) + "\n" + time)
+        print("One or more of the specified variables isn't a number!")
