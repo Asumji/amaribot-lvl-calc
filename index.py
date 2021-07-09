@@ -14,26 +14,26 @@ def convertTime(ms):
     if (ms >= 31104000000):
         year = floatToInt(ms/31104000000)
         month = floatToInt(ms/2592000000)
-        time = "Years: " + str(year) + " months: " + str(month-(year*12))
+        time = str(year) + " years and " + str(month-(year*12)) + " months."
     elif (ms >= 2592000000):
         month = floatToInt(ms/2592000000)
         day = floatToInt(ms/86400000)
-        time = "Months: " + str(month) + " days: " + str(day-(month*30))
+        time = str(month) + " months and " + str(day-(month*30)) + " days."
     elif (ms >= 86400000):
         day = floatToInt(ms/86400000)
         hour = floatToInt(ms/3600000)
-        time = "Days: " + str(day) + " hours: " + str(hour-(day*24))
+        time = str(day) + " days and " + str(hour-(day*24)) + " hours."
     elif (ms >= 3600000):
         hour = floatToInt(ms/3600000)
         minute = floatToInt(ms/60000)
-        time = "Hours: " + str(hour) + " minutes: " + str(minute-(hour*60))
+        time = str(hour) + " hours and " + str(minute-(hour*60)) + " minutes."
     elif (ms >= 60000):
         minute = floatToInt(ms/60000)
         second = floatToInt(ms/1000)
-        time = "Minutes: " + str(minute) + " seconds: " + str(second-(minute*60))
+        time = str(minute) + " minutes and " + str(second-(minute*60)) + " seconds."
     elif (ms >= 1000):
         second = floatToInt(ms/1000)
-        time = "Seconds: " + str(second)
+        time = str(second) + "seconds."
 
     return time
 
