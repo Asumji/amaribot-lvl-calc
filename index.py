@@ -65,6 +65,6 @@ while (True):
         time = convertTime(milliseconds)
         
         clear()
-        print("Needed XP: " + xp + "\nNeeded Messages: " + str(nMessages) + "\n" + time)
+        print("Level " + str(slvl) + " to Level " + str(elvl) + ":\n" + "Needed XP: " + xp + "\nNeeded Messages: " + str(nMessages) + "\n" + time)
     else:
         print("One or more of the specified variables isn't a number!")
