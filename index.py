@@ -10,7 +10,7 @@ def floatToInt(float):
     return integer
 
 def convertTime(ms):
-    time = ""
+    time = "no time needed!"
     if (ms >= 31104000000):
         year = floatToInt(ms/31104000000)
         month = floatToInt(ms/2592000000)
