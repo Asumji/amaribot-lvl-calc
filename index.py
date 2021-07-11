@@ -50,6 +50,12 @@ while (True):
         pmulti = int(pmulti)
         cd = int(cd)
 
+        if (pmulti < 1):
+            pmulti = 1
+
+        if (cd < 0.1):
+            cd = 0.1
+        
         if (slvl > 0):
             slvlxp = 20 * ((slvl-1) ** 2) + 35
         else:
