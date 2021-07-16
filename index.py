@@ -4,9 +4,12 @@ clear = lambda: os.system('cls')
 
 def floatToInt(float):
     string = str(float)
-    string = string.split(".")
-    string = string[0]
+    stringA = string.split(".")
+    string = stringA[0]
     integer = int(string)
+
+    if (int(stringA[1][0]) > 4):
+        integer += 1
     return integer
 
 def convertTime(ms):
